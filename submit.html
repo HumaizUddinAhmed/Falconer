@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/05def4ad8f.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>The Falconer</title>
+  </head>
+  <body>
+    <nav id="navbar">
+      <a class="title" href="#">
+        <!-- <img src="./assets/falconer logo (1)_edited.webp" alt="" srcset="" /> -->
+        <span>The Falconer</span>
+      </a>
+
+      <div class="menu_section">
+        <input type="checkbox" id="sidebar-active" />
+        <label for="sidebar-active" class="open-sidebar-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="32"
+            viewBox="0 -960 960 960"
+            width="32"
+          >
+            <path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            />
+          </svg>
+        </label>
+
+        <div class="links-container">
+          <label id="overlay" for="sidebar-active"></label>
+
+          <menu>
+            <label for="sidebar-active" class="close-sidebar-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="32"
+                viewBox="0 -960 960 960"
+                width="32"
+              >
+                <path
+                  d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                />
+              </svg>
+            </label>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="about.html">About</a>
+            </li>
+            <li>
+              <a href="submit.html">Submit</a>
+            </li>
+            <li>
+              <a href="archive.html">Archive</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact us</a>
+            </li>
+          </menu>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main_container">
+      <header>
+        <div class="about_hero_section">
+          <div class="content">
+            <div class="container">
+              <div class="banner">
+                <h2>Submit</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="submit">
+        <div class="submit_container">
+          <div class="issue_title">
+            <h1>ISSUE - X: Death</h1>
+            <p>
+              Death — as a question, as a thought, as an anxiety — always
+              exists, one may argue, against the backdrop of Literature.
+            </p>
+            <span class="horizontal_line"></span>
+          </div>
+
+          <div class="submit_rules">
+            <h2>Rules for submissions</h2>
+            <span class="horizontal_line"></span>
+            <div class="heading">
+              <h2>How to submit</h2>
+              <p>
+                Please upload your work through the form and be sure to fill out
+                all mandatory fields. Response times vary and may range anywhere
+                from 1 week to 1 month. Anything longer, and we will post an
+                announcement on our socials. We have a strick policy against
+                plagiarism, be careful!.
+              </p>
+            </div>
+          </div>
+          <div class="guidelines">
+            <h4>
+              <strong
+                >Follow the guidelines below to ensure your submission can be
+                properly processed:
+              </strong>
+              <br />
+              <br />
+            </h4>
+            <ul class="guide_points">
+              <li>
+                If you are submitting more than once, please do so in separate
+                form responses. For example, do not submit both an essay and a
+                short story in the same form response. You may submit up to two
+                times per issue. If your work is rejected, please do not submit
+                again until the next issue.
+              </li>
+              <li>
+                Please only submit work that is relevant to the current theme
+                and/or history in some way. If it is not, it will be rejected.
+                We will not consider work that does not fit the magazine's
+                mission.
+              </li>
+              <li>
+                <strong
+                  >We will not accept any pieces containing bigotry of any kind.
+                  Though the art of sharing ones stories is addicting, we do not
+                  condone any creations made to belittle/mock marginalized
+                  groups of people.</strong
+                >
+              </li>
+            </ul>
+            <br />
+            <span>We cannot wait to read your work!</span>
+          </div>
+
+          <div class="submit_form">
+            <form action="" method="">
+              <div class="form_fields_container">
+                <div
+                  id="field_0_container"
+                  class="field_name form_field"
+                  data-field-type="name"
+                  data-field-id="0"
+                >
+                  <fieldset>
+                    <legend class="field_label">
+                      Name <span class="forms_required_label">*</span>
+                    </legend>
+                    <div class="field_row_container">
+                      <div class="field_row">
+                        <div class="field_row_first">
+                          <input
+                            type="text"
+                            id="name_id"
+                            class="field_name_first"
+                            name="first_name"
+                            required
+                          />
+                          <label for="name_id" class="field_sublabel"
+                            >First</label
+                          >
+                        </div>
+                      </div>
+                      <div class="field_row">
+                        <div class="field_row_last">
+                          <input
+                            type="text"
+                            id="lastname_id"
+                            class="field_last_first"
+                            name="last_name"
+                            required
+                          />
+                          <label for="lastname_id" class="field_sublabel"
+                            >Last</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div
+                  id="form_email_field_1"
+                  class="field_email form_field form_field_container"
+                  data-field-type="email"
+                  data-field-id="1"
+                >
+                  <label class="field_label" for="form_email_field_1"
+                    >Email <span class="forms_required_label">*</span></label
+                  >
+                  <input
+                    type="email"
+                    name="email_field"
+                    id="form_email_field_1"
+                    required
+                  />
+                </div>
+                <div
+                  id="form_submission_field_3"
+                  class="field_submission form_field form_field_container"
+                  data-field-type="submission"
+                  data-field-id="1"
+                >
+                  <label class="field_label" for="form_submission_field_3"
+                    >Type of submission
+                    <span class="forms_required_label">*</span></label
+                  >
+                  <select
+                    name="form_submission_field_3"
+                    id="form_submission_field_3"
+                    class="field_large"
+                    required
+                  >
+                    <option value="Short Fiction">Short Fiction</option>
+                    <option value="Personal Essay">Personal Essay</option>
+                    <option value="Poetry (up to 5 poems)">
+                      Poetry (up to 5 poems)
+                    </option>
+                  </select>
+                  <div
+                    class="field_description"
+                    id="form_submission_field_3_description"
+                  >
+                    Please see our guidelines above for information about word
+                    count, images, etc.
+                  </div>
+                </div>
+                <div
+                  id="form_aboutSubmission_field_4"
+                  class="field_aboutSubmission form_field form_field_container"
+                  data-field-type="textarea"
+                  data-field-id="4"
+                >
+                  <label class="field_label" for="form_aboutSubmission_field_4"
+                    >Tell us a little bit about your submission
+                    <span class="forms_required_label">*</span></label
+                  >
+                  <textarea
+                    name="form_aboutSubmission_field_4"
+                    id="form_aboutSubmission_field_4"
+                    required
+                  ></textarea>
+                </div>
+                <div
+                  id="form_radio_consideration_field_5"
+                  class="field_radio_consideration form_field form_field_container"
+                  data-field-type="radio_consideration"
+                  data-field-id="5"
+                >
+                  <fieldset>
+                    <legend class="field_label">
+                      Is this submission currently under consideration anywhere
+                      else? <span class="forms_required_label">*</span>
+                    </legend>
+                    <ul
+                      id="form_radio_consideration_field_5"
+                      class="radio_consideration_list"
+                    >
+                      <li class="choice_1">
+                        <input
+                          type="radio"
+                          id="form_radio_consideration_field_5_radio1"
+                          name="form_radio_consideration_field_5"
+                          value="No"
+                          required
+                        />
+                        <label
+                          for="form_radio_consideration_field_5_radio1"
+                          class="form_radio_consideration_field_5_radio_label"
+                          >No</label
+                        >
+                      </li>
+                      <li class="choice_2">
+                        <input
+                          type="radio"
+                          id="form_radio_consideration_field_5_radio2"
+                          name="form_radio_consideration_field_5"
+                          value="Yes"
+                          required
+                        />
+                        <label
+                          for="form_radio_consideration_field_5_radio2"
+                          class="form_radio_consideration_field_5_radio_label"
+                          >Yes</label
+                        >
+                      </li>
+                    </ul>
+                  </fieldset>
+                </div>
+                <div
+                  id="form_submitConsideration_field_6"
+                  class="field_submitConsideration form_field form_field_container"
+                  data-field-type="textarea"
+                  data-field-id="6"
+                >
+                  <label
+                    class="field_label"
+                    for="form_submitConsideration_field_6"
+                    >Please list other publications where the submission may be
+                    under consideration.
+                    <span class="forms_required_label">*</span></label
+                  >
+                  <textarea
+                    name="form_submitConsideration_field_6"
+                    id="form_submitConsideration_field_6"
+                    required
+                  ></textarea>
+                </div>
+                <div
+                  id="form_radio_published_field_7"
+                  class="field_radio_published form_field form_field_container"
+                  data-field-type="radio_published"
+                  data-field-id="7"
+                >
+                  <fieldset>
+                    <legend class="field_label">
+                      Has the submission been previously published or is it
+                      awaiting publication anywhere else?
+                      <span class="forms_required_label">*</span>
+                    </legend>
+                    <ul
+                      id="form_radio_published_field_7"
+                      class="radio_published_list"
+                    >
+                      <li class="choice_1">
+                        <input
+                          type="radio"
+                          id="form_radio_published_field_7_radio1"
+                          name="form_radio_published_field_7"
+                          value="No"
+                          required
+                        />
+                        <label
+                          for="form_radio_published_field_7_radio1"
+                          class="form_radio_published_field_7_radio_label"
+                          >No</label
+                        >
+                      </li>
+                      <li class="choice_2">
+                        <input
+                          type="radio"
+                          id="form_radio_published_field_7_radio2"
+                          name="form_radio_published_field_7"
+                          value="Yes"
+                          required
+                        />
+                        <label
+                          for="form_radio_published_field_7_radio2"
+                          class="form_radio_published_field_7_radio_label"
+                          >Yes</label
+                        >
+                      </li>
+                    </ul>
+                  </fieldset>
+                </div>
+                <div
+                  id="form_publishedConsideration_field_8"
+                  class="field_publishedConsideration form_field form_field_container"
+                  data-field-type="textarea"
+                  data-field-id="8"
+                >
+                  <label
+                    class="field_label"
+                    for="form_publishedConsideration_field_8"
+                    >Please list other publications where the submission has
+                    been or will be published.
+                    <span class="forms_required_label">*</span></label
+                  >
+                  <textarea
+                    name="form_publishedConsideration_field_8"
+                    id="form_publishedConsideration_field_8"
+                    required
+                  ></textarea>
+                </div>
+
+                <div
+                  id="form_fileUpload_field_9"
+                  class="field_fileUpload form_field form_field_container"
+                  data-field-type="fileUpload"
+                  data-field-id="9"
+                >
+                  <label class="field_label" for="form_fileUpload_field_9"
+                    >File Upload.
+                    <span class="forms_required_label">*</span></label
+                  >
+                  <div class="form_upload form_field" data-field-id="9">
+                    <div class="uploadMessage form_field">
+                      <svg
+                        viewBox="0 0 1024 1024"
+                        focusable="false"
+                        data-icon="inbox"
+                        width="50px"
+                        height="50px"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M885.2 446.3l-.2-.8-112.2-285.1c-5-16.1-19.9-27.2-36.8-27.2H281.2c-17 0-32.1 11.3-36.9 27.6L139.4 443l-.3.7-.2.8c-1.3 4.9-1.7 9.9-1 14.8-.1 1.6-.2 3.2-.2 4.8V830a60.9 60.9 0 0 0 60.8 60.8h627.2c33.5 0 60.8-27.3 60.9-60.8V464.1c0-1.3 0-2.6-.1-3.7.4-4.9 0-9.6-1.3-14.1zm-295.8-43l-.3 15.7c-.8 44.9-31.8 75.1-77.1 75.1-22.1 0-41.1-7.1-54.8-20.6S436 441.2 435.6 419l-.3-15.7H229.5L309 210h399.2l81.7 193.3H589.4zm-375 76.8h157.3c24.3 57.1 76 90.8 140.4 90.8 33.7 0 65-9.4 90.3-27.2 22.2-15.6 39.5-37.4 50.7-63.6h156.5V814H214.4V480.1z"
+                        ></path>
+                      </svg>
+                      <span class="messageTitle"
+                        >Click or drag files to this area to upload.</span
+                      >
+                      <span class="messageHint">
+                        You can upload up to 5 files.
+                      </span>
+                    </div>
+                  </div>
+                  <input
+                    type="text"
+                    autocomplete="off"
+                    readonly
+                    class="dropzone_input"
+                    style="
+                      position: absolute !important;
+                      clip: rect(0, 0, 0, 0) !important;
+                      height: 1px !important;
+                      width: 1px !important;
+                      border: 0 !important;
+                      overflow: hidden !important;
+                      padding: 0 !important;
+                      margin: 0 !important;
+                    "
+                    id="form_fileUpload_field_9"
+                    name="form_fileUpload_field_9"
+                    required
+                  />
+                  <em id="field_error" class="form_error" role="alert">
+                    This field is required
+                  </em>
+                </div>
+
+                <div
+                  id="form_comment_field_10"
+                  class="field_comment form_field form_field_container"
+                  data-field-type="textarea"
+                  data-field-id="10"
+                >
+                  <label class="field_label" for="form_comment_field_10"
+                    >Comment or Message</label
+                  >
+                  <textarea
+                    name="form_comment_field_10"
+                    id="form_comment_field_10"
+                  ></textarea>
+                </div>
+                <div class="submitButton" id="formSubmit">
+                  <button type="submit" name="formSubmit">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer id="footer_back">
+      <div class="container">
+        <div class="footer_content">
+          <div class="footer_title">
+            <p>&copy; 2024 Falconer. All rights reserved</p>
+            <p>Designed by <span>hiiii</span></p>
+          </div>
+          <div class="links">
+            <ul class="socials">
+              <li>
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const navbar = document.getElementById("navbar");
+
+      window.onscroll = function () {
+        if (window.scrollY > 300) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      };
+    </script>
+  </body>
+</html>
