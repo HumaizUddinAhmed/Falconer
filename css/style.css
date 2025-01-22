@@ -138,9 +138,12 @@ nav svg {
     justify-content: center;
   }
 
+  #navbar menu {
+  width: 100%
+  }
   menu {
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     position: fixed;
     top: 0;
