@@ -43,19 +43,19 @@ body {
   top: 0;
   left: 0;
   background-color: transparent;
-  padding-top: 10px;
+  padding-top: 10px 3rem;
   justify-content: space-between;
   align-items: center;
   line-height: 74px;
   width: 100%;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease, padding 0.3s ease;
   /* transition: background-color 0.3s ease, color 0.3s ease; */
-  z-index: 10;
+  z-index: 100;
 }
 
 #navbar .title {
   display: flex;
-  padding-left: 65px;
+  padding-left: 3rem;
   justify-content: center;
   align-items: center;
   text-decoration: none;
@@ -81,16 +81,17 @@ body {
 
 #navbar menu {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
+  padding: 0 0.5rem 0 0;
   align-items: center;
   list-style: none;
-  width: 50%;
+  width: 100%;
   /* color: var(--base-color); */
 }
 
-#navbar menu li {
+/* #navbar menu li {
   padding-right: 30px;
-}
+} */
 
 #navbar menu li a {
   text-decoration: none;
@@ -119,6 +120,13 @@ body {
   width: 100%;
 }
 
+/* Active link styling */
+.nav-link.active {
+  color: #ff0000; /* Highlight color */
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 nav svg {
   fill: black;
 }
@@ -140,7 +148,7 @@ nav svg {
 
   menu {
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     position: fixed;
     top: 0;
@@ -315,7 +323,7 @@ nav svg {
   word-wrap: break-word;
   text-align: left;
   line-height: 1.75;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 28px auto;
 }
 
 .who_content a {
@@ -340,14 +348,14 @@ nav svg {
   text-transform: uppercase;
 }
 
-//********************************** News & Announcements *********************************************//
+/********************************** News & Announcements *********************************************/
 .news_content {
-  display: flex;
-  justify-content: center;
+  /* display: flex; */
+  /* justify-content: center; */
   align-items: center;
   min-height: 100vh;
   padding: 2rem;
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
 }
 
 .news_content h2 {
@@ -360,13 +368,11 @@ nav svg {
 }
 
 .card_container {
-  /* display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-template-rows: auto;
-  grid-auto-rows: auto; */
   width: 100%;
   max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .card_container h2 {
@@ -377,37 +383,30 @@ nav svg {
 .issue_card_content_container {
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 75%;
   margin: 20px auto;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  /* padding: 1rem; */
-  /* max-width: 550px; */
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .issue_card {
-  /* background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px; */
-  /* padding: 1rem; */
   width: 100%;
   margin-bottom: 110px;
-  /* max-width: 550px; */
-  /* text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
 
 .issue_card_image {
-  background-image: url(../assets/death_in_literature_cover_resize.webp);
   width: 50%;
-  max-height: 396px;
   border-radius: 8px 0 0 8px;
-  height: 100dvh;
-  background-size: contain;
-  background-repeat: no-repeat;
+}
+
+.issue_card_image img{
+  height: 100%;
+  width: 100%;
+  border-radius: 8px 0 0 8px;
+
 }
 
 .issue_card_content {
@@ -420,6 +419,7 @@ nav svg {
 }
 
 .issue_card_content a {
+  font-weight: 600;
   text-decoration: none;
   color: #f73859;
 }
@@ -449,14 +449,16 @@ nav svg {
 }
 
 .submission_card_image {
-  background-image: url(../assets/Renaissance1.jpg);
   width: 50%;
-  /* max-height: 396px; */
+  /* border-radius: 8px 0 0 8px; */
+}
+
+.submission_card_image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
   border-radius: 8px 0 0 8px;
-  max-height: 376px;
-  height: 100dvh;
-  background-size: contain;
-  background-repeat: no-repeat;
+
 }
 
 .submission_card_content {
@@ -470,6 +472,7 @@ nav svg {
 
 .submission_card_content a {
   text-decoration: none;
+  font-weight: 600;
   color: #f73859;
 }
 
@@ -478,7 +481,7 @@ nav svg {
   transition: transform 0.2s ease;
 }
 
-//********************************** Footer *********************************************//
+/********************************** Footer *********************************************/
 footer {
   /* display: flex; */
 }
@@ -656,7 +659,7 @@ article {
   font-size: 17px;
   font-weight: 500px;
   line-height: 1.75;
-  color: ##000000;
+  color: #000000;
 }
 
 /* Responsive Design for Small Screens */
@@ -685,6 +688,7 @@ article {
 .issue_title {
   text-align: center;
   font-size: 17px;
+  font-size: 24px;
   margin-bottom: 55px;
 }
 
@@ -694,9 +698,9 @@ article {
   font-family: FancyFont;
   margin-bottom: 30px;
 }
-.issue_title p {
+/* .issue_title p {
   line-height: 1.75px;
-}
+} */
 
 .submit_rules h2 {
   font-size: 26px;
@@ -713,7 +717,7 @@ article {
   height: 2px; /* Sets the thickness of the line */
   /* background-color: black; Sets the color of the line */
   margin: 40px 0;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.13);
   color: #000000;
   font-family: "Birdseye", sans-serif;
   /* font-size: 16px; */
@@ -780,7 +784,7 @@ fieldset {
 }
 
 .forms_required_label {
-  font-weight: 400px;
+  font-weight: 400;
   color: #d63637;
 }
 #form_submission_field_3 {
@@ -882,6 +886,46 @@ textarea {
   margin-bottom: 0.5rem;
 }
 
+.preview_upload {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.preview_image img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.progress {
+  margin-top: 10px;
+}
+
+.progress_bar {
+  height: 10px;
+  background: #abb3ab;
+  transition: width 0.3s ease;
+}
+.preview_remove {
+  position: relative;
+  display: inline-block;
+  width: 24px; /* Set a width for the X */
+  height: 24px; /* Set a height for the X */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.line {
+  position: absolute;
+  width: 2px; /* Width of the lines */
+  height: 20px; /* Height of the lines */
+  background: black; /* Color of the lines */
+}
+
+/* #field_submitConsideration {
+  display: none;
+} */
+
 input[type="radio"] {
   margin-right: 0.5rem;
 }
@@ -892,18 +936,23 @@ input[type="radio"] {
 }
 
 button[type="submit"] {
-  background-color: #007bff;
-  color: #fff;
+  display: inline-block;
   padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 4px;
+  background-color: black; /* Black background */
+  color: white; /* White text */
+  text-decoration: none;
+  border: 2px solid black; /* Black border */
+  border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  text-align: center;
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
 }
 
 button[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text */
+  border: 2px solid black; /* Black border remains */
 }
 
 /* File Upload Styles */
@@ -948,9 +997,528 @@ button[type="submit"]:hover {
   display: block;
 }
 
+.close_title {
+  color: #000000;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.75;
+  margin: 0 auto 30px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .field_row {
     flex-direction: column;
   }
+}
+
+/************************ Archive Page ****************************************/
+
+.archive_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 40px;
+  position: relative;
+  width: 100%;
+}
+
+article {
+  text-align: center;
+  word-wrap: break-word;
+  margin-bottom: 10px;
+}
+
+.issues {
+  text-align: center;
+  word-wrap: break-word;
+  margin-bottom: 10px;
+}
+
+.issue_image {
+  height: 100%;
+  width: 100%;
+}
+
+.issues h2 {
+  font-family: FancyFont;
+  font-size: 34px;
+  letter-spacing: 0.55rem;
+  font-weight: 700;
+  line-height: 1.25;
+  /* margin: 0 auto 30px; */
+  margin: 84px auto 30px;
+  text-transform: uppercase;
+}
+
+.issue_container {
+  display: grid;
+  /* width: 575px; */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.issue {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  /* padding: 15px; */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.issue_content {
+  padding: 20px;
+}
+
+.issue img {
+  width: 100%;
+  height: 90%;
+  border-radius: 6px 6px 0 0;
+  object-fit: cover;
+}
+
+.issue h3 {
+  margin: 10px 0 40px;
+  font-size: 30px;
+  color: rgb(42, 42, 42);
+  line-height: 1.25;
+}
+
+.issue_img {
+  margin-bottom: 15px;
+}
+
+.issue p {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.75;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.issue span a {
+  color: #d63637;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.issue:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+/* Responsive Design for Small Screens */
+@media screen and (max-width: 768px) {
+  .issue_container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/********************** Issue Page *******************/
+
+.issue_hero_section {
+  background-image: url("../assets/death_in_literature_cover.webp");
+  background-size: cover; /* Cover the entire section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+  height: 702px; /* Full viewport height */
+  display: flex; /* Use flexbox for centering content */
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  color: white; /* Text color for contrast */
+  text-align: center; /* Center text */
+  padding: 20px; /* Optional padding */
+  color: #ffffff;
+}
+.issue_hero_section .banner {
+  width: 53%;
+}
+
+.about_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 40px;
+  position: relative;
+  width: 100%;
+}
+
+/* .about_who_container {
+  height: 3000px;
+} */
+
+.about_who_content {
+  padding-bottom: 4em;
+  /* max-width: 1120px; */
+  /* height: 309px; */
+  text-align: center;
+}
+
+.about_who_content h2 {
+  color: var(--text-color);
+  text-align: center;
+  font-family: FancyFont;
+  font-size: 34px;
+  letter-spacing: 0.55rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 auto 30px;
+}
+
+.about_who_content p {
+  width: 85%;
+  font-size: 20px;
+  line-height: 1.75;
+  text-align: center;
+  margin: 0 auto 20px auto;
+}
+.contributer_container {
+  font-family: "Birdseye", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.75;
+  margin: 0 auto 30px;
+  width: 75%;
+}
+
+.content_elements h2 {
+  color: #000000;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+  width: 75%;
+  text-align: center;
+  margin: 0 auto 30px;
+}
+.btn_container {
+  text-align: center;
+}
+
+.download_btn {
+  display: inline-block;
+  background-color: black; /* Black background */
+  color: white; /* White text */
+  text-decoration: none;
+  border: 2px solid black; /* Black border */
+
+  text-align: center;
+  transition: all 100ms ease-in-out; /* Smooth transition for hover effect */
+}
+
+.download_btn span {
+  display: inline-block;
+  height: auto;
+  padding: 14px 30px;
+  background: transparent;
+  background-image: none !important;
+  color: inherit !important;
+  letter-spacing: 0.03em;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.download_btn:hover {
+  background-color: transparent; /* Transparent background */
+  color: black; /* Black text */
+  border: 2px solid black; /* Black border remains */
+}
+
+/*************************** Contact Page **************************/
+
+.content_container {
+  text-align: center;
+  margin: 5rem;
+}
+
+.content_container h2 {
+  font-family: FancyFont;
+  font-size: 2.5rem;
+  letter-spacing: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.content_container span {
+  font-size: 1.5rem;
+}
+
+.contact_form {
+  margin: 10rem 0 10rem 0;
+}
+
+@media (max-width: 768px) {
+  #navbar .title {
+    padding-left: 1rem;
+  }
+
+  #navbar .title span {
+    font-size: 35px;
+  }
+
+  #navbar menu{
+    padding: 0;
+  }
+
+  #navbar menu li a {
+    font-size: 10px;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    padding: 14px;
+    font-weight: 500;
+  }
+
+  .banner h2 {
+    font-family: "FancyFont";
+    text-align: center;
+    font-size: 40px;
+    font-weight: lighter;
+    letter-spacing: 4px;
+    line-height: 85px;
+  }
+
+  .who_content p {
+    text-align: center;
+  }
+
+  .issue {
+    width: 50%;
+    margin: auto;
+  }
+
+  .content_container {
+    text-align: center;
+    margin: 0 0 5rem 0rem;
+  }
+}
+
+@media (max-width: 425px) {
+  #navbar .title {
+    width: 100%;
+    padding: 0.5rem 0 0 0;
+  }
+
+  #navbar menu li a {
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    padding: 14px;
+    font-weight: 500;
+  }
+
+  .hero_section {
+    position: relative;
+    height: 628px;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    position: relative;
+    width: 100%;
+  }
+
+  .content {
+    top: 10%;    
+  }
+
+  .banner h2 {
+    font-size: 36px;
+    font-weight: lighter;
+    letter-spacing: 1.5px;
+    line-height: 60px;
+  }
+
+
+  .who_content h2 {
+    font-size: 42px;
+  }
+
+  .who_content p {
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    line-height: 1.75;
+    margin: 0 auto 28px auto;
+  }
+
+  .who_content a span {
+    padding: 10px 20px;
+  }
+
+  .news_content {
+    padding: 0;
+   
+  }
+  .news_content h2 {
+    font-size: 42px;
+  }
+
+  .issue_card {
+    width: 100%;
+    margin-bottom: 100px;
+  }
+
+  .issue_card_content_container {
+    width: 100%;
+    margin: 0px;
+    flex-direction: column;
+  }
+
+  .issue_card_image {
+    width: 100%;
+    /* border-radius: 8px 0 8px 0; */
+  }
+
+.issue_card_image img {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+
+.issue_card_content {
+  width: 100%;
+  margin: 65px 0;
+}
+
+  .submission_card_container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;   
+  }
+
+  .submission_card_image {
+    width: 100%;
+    /* border-radius: 8px 0 0 8px; */
+  }
+
+  .submission_card_image img {
+    border-radius: 8px 8px 0 0;
+  }
+
+  .submission_card_content {
+    width: 100%;
+    margin: 65px 0;
+}
+
+  #navbar menu {
+    justify-content: center;
+  }
+
+  .about_hero_section {
+    height: 528px;
+  }
+
+
+  .about_who_content h2 {
+    font-size: 26px;
+    letter-spacing: 0.55rem;
+    font-weight: 700;
+    line-height: 2.25;
+  }
+
+  .about_container {
+    padding: 70px 0px;
+  }
+
+  .masthead h2 {
+    font-family: FancyFont;
+    font-size: 26px;
+    letter-spacing: 0.55rem;
+    font-weight: 700;
+  }
+
+  .team {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .team_member {
+    padding: 20px 0;
+  }
+
+  .team_member img {
+  width: 100%;
+  height: 47%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  }
+
+  .member_image {
+    width: 100%;
+  }
+
+  .submit_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 20px;
+    position: relative;
+    width: 100%;
+}
+
+  .issue_title h1 {
+    text-align: center;
+    font-size: 36px;
+    font-family: FancyFont;
+    margin-bottom: 30px;
+}
+
+.submit_form{
+  padding: 0;
+}
+
+.field_row_container {
+  flex-direction: column;
+}
+
+.close_title {
+  font-size: 36px;
+}
+
+.archive_container {
+  padding: 70px 0px;
+}
+
+.issue {
+  width: 100%;
+  margin: auto;
+}
+.join_title{
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.guidelines{
+  font-size: 18px;
+}
+
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  margin-bottom: 30px;
+}
+
+.content_container h2 {
+  font-family: FancyFont;
+  font-size: 30px;
+  font-weight: bold;
+ 
+}
+
+.submit_form {
+  width: Min(660px, 95%);
+}
 }

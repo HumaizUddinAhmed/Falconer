@@ -12,7 +12,7 @@
   </head>
   <body>
     <nav id="navbar">
-      <a class="title" href="#">
+      <a class="title" href="index.html">
         <!-- <img src="./assets/falconer logo (1)_edited.webp" alt="" srcset="" /> -->
         <span>The Falconer</span>
       </a>
@@ -49,19 +49,22 @@
               </svg>
             </label>
             <li>
-              <a href="index.html">Home</a>
+              <a href="index.html" class="nav-link">Home</a>
             </li>
             <li>
-              <a href="about.html">About</a>
+              <a href="about.html" class="nav-link">About</a>
             </li>
             <li>
-              <a href="submit.html">Submit</a>
+              <a href="submit.html" class="nav-link">Submit</a>
             </li>
             <li>
-              <a href="archive.html">Archive</a>
+              <a href="archive.html" class="nav-link">Archive</a>
             </li>
             <li>
-              <a href="contact.html">Contact us</a>
+              <a href="join.html" class="nav-link">Join us</a>
+            </li>
+            <li>
+              <a href="contact.html" class="nav-link">Contact us</a>
             </li>
           </menu>
         </div>
@@ -143,7 +146,7 @@
           </div>
 
           <div class="submit_form">
-            <form action="" method="">
+            <form enctype="multipart/form-data" id="submitForm">
               <div class="form_fields_container">
                 <div
                   id="field_0_container"
@@ -219,6 +222,7 @@
                     class="field_large"
                     required
                   >
+                    <option value="" disabled selected>Select a Type</option>
                     <option value="Short Fiction">Short Fiction</option>
                     <option value="Personal Essay">Personal Essay</option>
                     <option value="Poetry (up to 5 poems)">
@@ -296,10 +300,11 @@
                   </fieldset>
                 </div>
                 <div
-                  id="form_submitConsideration_field_6"
+                  id="form_submitConsideration_6"
                   class="field_submitConsideration form_field form_field_container"
                   data-field-type="textarea"
                   data-field-id="6"
+                  style="display: none"
                 >
                   <label
                     class="field_label"
@@ -311,7 +316,6 @@
                   <textarea
                     name="form_submitConsideration_field_6"
                     id="form_submitConsideration_field_6"
-                    required
                   ></textarea>
                 </div>
                 <div
@@ -362,10 +366,11 @@
                   </fieldset>
                 </div>
                 <div
-                  id="form_publishedConsideration_field_8"
+                  id="form_publishedConsideration_8"
                   class="field_publishedConsideration form_field form_field_container"
                   data-field-type="textarea"
                   data-field-id="8"
+                  style="display: none"
                 >
                   <label
                     class="field_label"
@@ -377,7 +382,6 @@
                   <textarea
                     name="form_publishedConsideration_field_8"
                     id="form_publishedConsideration_field_8"
-                    required
                   ></textarea>
                 </div>
 
@@ -412,13 +416,21 @@
                         You can upload up to 5 files.
                       </span>
                     </div>
+                    <div
+                      class="preview_upload"
+                      id="preview_upload"
+                      style="display: none"
+                    ></div>
                   </div>
                   <input
-                    type="text"
+                    type="file"
+                    accept=".pdf, .doc, .docx, .xls, .xlsx, .ppt, .pptx, .odt, .odp, .ods, .rtf, .txt, .csv, .pages, .xps, .wpd"
                     autocomplete="off"
                     readonly
+                    multiple
                     class="dropzone_input"
                     style="
+                      display: none;
                       position: absolute !important;
                       clip: rect(0, 0, 0, 0) !important;
                       height: 1px !important;
@@ -428,11 +440,16 @@
                       padding: 0 !important;
                       margin: 0 !important;
                     "
-                    id="form_fileUpload_field_9"
+                    id="form_fileUpload_field_9_input"
                     name="form_fileUpload_field_9"
                     required
                   />
-                  <em id="field_error" class="form_error" role="alert">
+                  <em
+                    id="field_error"
+                    class="form_error"
+                    role="alert"
+                    style="display: none"
+                  >
                     This field is required
                   </em>
                 </div>
@@ -457,6 +474,7 @@
               </div>
             </form>
           </div>
+          <h2 class="close_title">SUBMISSIONS FOR ISSUE X ARE CLOSED</h2>
         </div>
       </section>
     </div>
@@ -496,5 +514,376 @@
         }
       };
     </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get the radio buttons
+        const radioYes = document.getElementById(
+          "form_radio_consideration_field_5_radio2"
+        );
+        const radioNo = document.getElementById(
+          "form_radio_consideration_field_5_radio1"
+        );
+        // Get the div to show/hide
+        const considerationDiv = document.getElementById(
+          "form_submitConsideration_field_6"
+        );
+
+        // Add event listeners to the radio buttons
+        radioYes.addEventListener("change", function () {
+          if (radioYes.checked) {
+            considerationDiv.style.display = "block"; // Show the div
+          }
+        });
+
+        radioNo.addEventListener("change", function () {
+          if (radioNo.checked) {
+            considerationDiv.style.display = "none"; // Hide the div
+          }
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get the radio buttons
+        const radioYes = document.getElementById(
+          "form_radio_published_field_7_radio2"
+        );
+        const radioNo = document.getElementById(
+          "form_radio_published_field_7_radio1"
+        );
+        // Get the div to show/hide
+        const publishedConsiderationDiv = document.getElementById(
+          "form_publishedConsideration_field_8"
+        );
+
+        // Add event listeners to the radio buttons
+        radioYes.addEventListener("change", function () {
+          if (radioYes.checked) {
+            publishedConsiderationDiv.style.display = "block"; // Show the div
+          }
+        });
+
+        radioNo.addEventListener("change", function () {
+          if (radioNo.checked) {
+            publishedConsiderationDiv.style.display = "none"; // Hide the div
+          }
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const fileInput = document.getElementById(
+          "form_fileUpload_field_9_input"
+        );
+        const considerationYes = document.getElementById(
+          "form_radio_consideration_field_5_radio2"
+        );
+        const considerationNo = document.getElementById(
+          "form_radio_consideration_field_5_radio1"
+        );
+        const considerationDetails = document.getElementById(
+          "form_submitConsideration_6"
+        );
+        const form_submitConsideration_field_6 = document.getElementById(
+          "form_submitConsideration_field_6"
+        );
+
+        const publishedInfoYes = document.getElementById(
+          "form_radio_published_field_7_radio2"
+        );
+        const publishedInfoNo = document.getElementById(
+          "form_radio_published_field_7_radio1"
+        );
+        const publishedInfoDetails = document.getElementById(
+          "form_publishedConsideration_8"
+        );
+        const form_additionalInfo_field_8 = document.getElementById(
+          "form_publishedConsideration_field_8"
+        );
+        const form = document.getElementById("submitForm"); // Assuming you have a form with this ID
+        const previewContainer = document.getElementById("preview_upload");
+        const uploadMessage = document.querySelector(".uploadMessage");
+        const fieldError = document.getElementById("field_error");
+
+        // Event Listeners for consideration
+        considerationYes.addEventListener("change", () => {
+          if (considerationYes.checked) {
+            considerationDetails.style.display = "block";
+            form_submitConsideration_field_6.setAttribute("required", "true");
+          }
+        });
+
+        considerationNo.addEventListener("change", () => {
+          if (considerationNo.checked) {
+            considerationDetails.style.display = "none";
+            form_submitConsideration_field_6.removeAttribute("required");
+          }
+        });
+
+        // Event Listeners for additional info
+        publishedInfoYes.addEventListener("change", () => {
+          if (publishedInfoYes.checked) {
+            publishedInfoDetails.style.display = "block";
+            form_additionalInfo_field_8.setAttribute("required", "true");
+          }
+        });
+
+        publishedInfoNo.addEventListener("change", () => {
+          if (publishedInfoNo.checked) {
+            publishedInfoDetails.style.display = "none";
+            form_additionalInfo_field_8.removeAttribute("required");
+          }
+        });
+
+        // Trigger file input when the message area is clicked
+        uploadMessage.addEventListener("click", function () {
+          fileInput.click();
+        });
+
+        fileInput.addEventListener("change", function (event) {
+          const files = Array.from(event.target.files);
+          if (files.length + previewContainer.children.length > 5) {
+            alert("You can upload a maximum of 5 files.");
+            return;
+          }
+
+          files.forEach((file) => {
+            const reader = new FileReader();
+            reader.uploadProgress = 0;
+
+            // Create a preview for the uploaded file
+            const fileSizeMB = (file.size / (1024 * 1024)).toFixed(2); // Convert to MB
+            const fileName = file.name;
+
+            const filePreview = document.createElement("div");
+            filePreview.className = "file_preview";
+            filePreview.style.position = "relative";
+            filePreview.style.margin = "0 0 12px 0";
+            filePreview.innerHTML = `
+          <div class="preview_details" style="display: flex;">
+           
+            <div class="preview_filename" style="padding: 0 40px 0 10px;">
+              <span>${fileName}</span>
+            </div>
+             <div class="preview_size">
+              <span><strong>${fileSizeMB}</strong> MB</span>
+            </div>
+          </div>
+          <div class="progress">
+              <span class="upload_progress" id="upload_progress">0%</span>
+            <div class="progress_bar" style="width: 0%;"></div>
+          </div>
+          <div class="preview_remove" style="position: absolute; right: 0; top: 0; cursor: pointer;">
+            <div class="line" style="position: absolute; width: 2px; height: 20px; background: black; transform: rotate(45deg);"></div>
+            <div class="line" style="position: absolute; width: 2px; height: 20px; background: black; transform: rotate(-45deg);"></div>
+          </div>
+        `;
+
+            // Append the preview to the container
+            previewContainer.appendChild(filePreview);
+            previewContainer.style.display = "block"; // Show the preview container
+
+            // Simulate upload progress
+            let uploadProgress = 0;
+            const progress = filePreview.querySelector("#upload_progress");
+            const progressBar = filePreview.querySelector(".progress_bar");
+
+            const progressInterval = setInterval(() => {
+              if (uploadProgress < 100) {
+                uploadProgress += 10; // Increment progress
+                progress.textContent = uploadProgress + "%";
+                progressBar.style.width = uploadProgress + "%";
+              } else {
+                clearInterval(progressInterval); // Stop the progress simulation
+                setTimeout(() => {
+                  removeProgress(filePreview); // Remove progress bar after 1 second
+                }, 1000);
+              }
+            }, 300); // Update every 300 milliseconds
+
+            // Remove file event
+            filePreview
+              .querySelector(".preview_remove")
+              .addEventListener("click", function (e) {
+                e.preventDefault();
+                previewContainer.removeChild(filePreview); // Remove preview from the container
+                if (previewContainer.children.length === 0) {
+                  previewContainer.style.display = "none"; // Hide the preview if no files are left
+                }
+              });
+
+            reader.onload = function (e) {
+              const base64String = e.target.result.split(",")[1];
+            };
+            reader.readAsDataURL(file);
+          });
+        });
+
+        // Function to remove the progress bar
+        function removeProgress(filePreview) {
+          const progressElement = filePreview.querySelector(".progress");
+          if (progressElement) {
+            progressElement.style.display = "none"; // Hide the progress bar
+          }
+        }
+
+        async function submitForm(data, form) {
+          try {
+            const response = await fetch("http://localhost:5000/upload", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+            if (response.ok) {
+              form.reset();
+              fileInput.value = ""; // Clear the file input field
+              previewContainer.innerHTML = ""; // Clear the preview section
+              previewContainer.style.display = "none"; // Hide the preview container
+
+              alert("Form submitted successfully!");
+            } else {
+              alert("Failed to submit the form.");
+            }
+          } catch (error) {
+            console.error("Error submitting the form:", error);
+            alert("An error occurred. Please try again.");
+          }
+        }
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          fieldError.style.display = "none";
+
+          if (fileInput.files.length === 0) {
+            fieldError.style.display = "block";
+            return;
+          }
+
+          const data = {
+            first_name: form.first_name.value,
+            last_name: form.last_name.value,
+            email: form.email_field.value,
+            submission_type: form.form_submission_field_3.value,
+            about_submission: form.form_aboutSubmission_field_4.value,
+            consideration: considerationYes.checked ? "Yes" : "No",
+            published_info: publishedInfoYes.checked ? "Yes" : "No",
+            files: [],
+            comment: form.form_comment_field_10.value,
+          };
+
+          // Conditionally add consideration_details
+          if (considerationYes.checked) {
+            data.consideration_details = form_submitConsideration_field_6.value; // Add only if Yes is checked
+          }
+
+          // Conditionally add published_info_details
+          if (publishedInfoYes.checked) {
+            data.published_info_details = form_additionalInfo_field_8.value; // Add only if Yes is checked
+          }
+
+          const files = Array.from(fileInput.files);
+          const totalSize = files.reduce((acc, file) => acc + file.size, 0);
+          const totalSizeInMB = (totalSize / (1024 * 1024)).toFixed(2); // Convert to MB and limit to 2 decimal places
+
+          console.log(totalSizeInMB);
+          let fileLoaded = 0;
+
+          files.forEach((file) => {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              const base64String = e.target.result.split(",")[1];
+              data.files.push({
+                name: file.name,
+                type: file.type,
+                size: file.size,
+                data: base64String,
+              });
+              fileLoaded++;
+              if (fileLoaded === files.length) {
+                submitForm(data, form); // Only submit when all files are read
+              }
+            };
+            reader.readAsDataURL(file);
+          });
+          console.log(data);
+          // const formData = new FormData(form);
+          // submitForm(formData);
+          // Log formData keys and values
+          // for (let [key, value] of formData.entries()) {
+          //   console.log(key, value);
+          // }
+
+          // If valid, you can submit the form here
+          console.log("Form submitted successfully!");
+        });
+      });
+    </script>
+
+    <!-- <script>
+      document
+        .getElementById("form_fileUpload_field_9")
+        .addEventListener("change", function (event) {
+          const file = event.target.files[0];
+
+          if (file) {
+            // Show the preview div
+            const previewUpload = document.getElementById("preview_upload");
+            previewUpload.style.display = "block";
+
+            // Display file details
+            const previewFilename = document.getElementById("preview_filename");
+            previewFilename.textContent = file.name;
+
+            const previewSize = document.getElementById("preview_size");
+            const sizeInMB = (file.size / (1024 * 1024)).toFixed(2); // Convert to MB
+            previewSize.textContent = sizeInMB;
+
+            // Display image preview if the file is an image
+            const previewImage = document.getElementById("preview_image");
+            if (file.type.startsWith("image/")) {
+              const reader = new FileReader();
+              reader.onload = function (e) {
+                previewImage.src = e.target.result;
+              };
+              reader.readAsDataURL(file);
+            } else {
+              previewImage.src = ""; // Clear the image preview
+            }
+
+            // Simulate upload progress
+            const progress = document.getElementById("upload_progress");
+            const progressBar = document.querySelector(".progress_bar");
+
+            let uploadProgress = 0;
+            const uploadInterval = setInterval(() => {
+              if (uploadProgress < 100) {
+                uploadProgress += 10; // Simulate progress increase
+                progress.textContent = uploadProgress + "%";
+                progressBar.style.width = uploadProgress + "%";
+              } else {
+                clearInterval(uploadInterval);
+              }
+            }, 100); // Update every 100 milliseconds
+
+            // Remove file event
+            document
+              .getElementById("remove_file")
+              .addEventListener("click", function (e) {
+                e.preventDefault();
+                previewUpload.style.display = "none"; // Hide the preview
+                event.target.value = ""; // Clear the file input
+                progress.textContent = "0%";
+                progressBar.style.width = "0%";
+                previewFilename.textContent = "No file uploaded";
+                previewSize.textContent = "0 MB";
+                previewImage.src = ""; // Clear the image preview
+              });
+          }
+        });
+    </script> -->
   </body>
 </html>

@@ -73,73 +73,40 @@
 
     <div class="main_container">
       <header>
-        <div class="hero_section">
+        <div class="issue_hero_section">
           <div class="content">
             <div class="container">
               <div class="banner">
-                <h2>
-                  Turning and turning in the widening gyre The falcon cannot
-                  hear the falconer; Things fall apart; the centre cannot hold
-                </h2>
+                <h2>Issue - X <br />(Death To Literature)</h2>
               </div>
             </div>
           </div>
         </div>
       </header>
-
-      <section class="who">
+      <section class="issue">
         <div class="container">
-          <div class="who_content">
-            <h2>Who we are?</h2>
-            <p>
-              The Falconer is a literary magazine run by the students of the
-              English Department, University of Karachi. The themes of the
-              magazine are an eclectic mix of literature, philosophy, and
-              politics.
-            </p>
-            <a href="about.html"><span> READ MORE</span></a>
-          </div>
-        </div>
-      </section>
-
-      <section class="news">
-        <div class="container">
-          <div class="news_content">
-            <h2>News & Announcements</h2>
-
-            <div class="card_container">
-              <div class="card">
-              <h2>Latest Issue</h2>
-              <div class="issue_card">
-                <div class="issue_card_content_container">
-                  <div class="issue_card_image">
-                    <img src="/assets/death_in_literature_cover_resize.webp" alt="">
-                  </div>
-                  <div class="issue_card_content">
-                    <h3>ISSUE X - DEATH TO LITERATURE</h3>
-
-                    <a href="issue_X.html">Download Now</a>
-                  </div>
-                </div>
+          <div class="content_elements">
+            <h2>
+              "Death — as a question, as a thought, as an anxiety — always
+              exists, one may argue, against the backdrop of Literature."
+            </h2>
+            <div class="contributer_container">
+              <div class="paragraph">
+                Contributors: Shel Zhou, Morgan Bosi, Srujani Kukkaduvu, Brielle
+                Benjamin, Kate Olivia, Sophia Parmele, Nana, Mihaela Anteska,
+                Sarah Nabi, Juliette Dehan, M., Lily Blackmore, Yelena Doe,
+                Siryn Cowie, Sharvari (Siri) Bhujade, Krishnananda Das, Smilla
+                Philippine, Aradha Gupta, Anna Scola, Raphael Miles De Rai,
+                Javeria, Vishwachi Tiwari, Arooni, Meaghan Steeves, Amani
+                Metheen
               </div>
+              <div class="divider"><span class="horizontal_line"></span></div>
             </div>
-
-            <div class="card">
-
-            
-              <h2>Submission</h2>
-              <div class="submission_card">
-                <div class="submission_card_container">
-                  <div class="submission_card_image">
-                    <img src="/assets/Renaissance1.jpg" alt="" srcset="">
-                  </div>
-                  <div class="submission_card_content">
-                    <h3>SUBMISSION FOR ISSUE X ARE CLOSED</h3>
-                    <a href="submit.html">Join Now</a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <h2>- Read Issue X -</h2>
+            <div class="btn_container">
+              <a class="download_btn" href="/assets/pdf/issue 10 - death.pdf"
+                ><span>Download PDF</span></a
+              >
             </div>
           </div>
         </div>
@@ -180,18 +147,6 @@
           navbar.classList.remove("scrolled");
         }
       };
-
-      // JavaScript to highlight the active link
-      document.addEventListener("DOMContentLoaded", () => {
-        const navLinks = document.querySelectorAll(".nav-link");
-        const currentPath = window.location.pathname;
-
-        navLinks.forEach((link) => {
-          if (link.getAttribute("href") === currentPath) {
-            link.classList.add("active");
-          }
-        });
-      });
     </script>
   </body>
 </html>

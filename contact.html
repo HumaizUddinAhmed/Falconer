@@ -12,7 +12,7 @@
   </head>
   <body>
     <nav id="navbar">
-      <a class="title" href="#">
+      <a class="title" href="index.html">
         <!-- <img src="./assets/falconer logo (1)_edited.webp" alt="" srcset="" /> -->
         <span>The Falconer</span>
       </a>
@@ -49,19 +49,22 @@
               </svg>
             </label>
             <li>
-              <a href="index.html">Home</a>
+              <a href="index.html" class="nav-link">Home</a>
             </li>
             <li>
-              <a href="about.html">About</a>
+              <a href="about.html" class="nav-link">About</a>
             </li>
             <li>
-              <a href="submit.html">Submit</a>
+              <a href="submit.html" class="nav-link">Submit</a>
             </li>
             <li>
-              <a href="archive.html">Archive</a>
+              <a href="archive.html" class="nav-link">Archive</a>
             </li>
             <li>
-              <a href="contact.html">Contact us</a>
+              <a href="join.html" class="nav-link">Join us</a>
+            </li>
+            <li>
+              <a href="contact.html" class="nav-link">Contact us</a>
             </li>
           </menu>
         </div>
@@ -74,12 +77,100 @@
           <div class="content">
             <div class="container">
               <div class="banner">
-                <h2>About Us</h2>
+                <h2>Contact Us</h2>
               </div>
             </div>
           </div>
         </div>
       </header>
+      <section class="contact_form">
+        <div class="content_container">
+          <h2>For Anything Else, I'm Right Here</h2>
+          <span>Questions, comments and suggestions - Just let us know!</span>
+        </div>
+        <div class="submit_form">
+          <form enctype="multipart/form-data" id="submitForm">
+            <div class="form_fields_container">
+              <div
+                id="field_0_container"
+                class="field_name form_field"
+                data-field-type="name"
+                data-field-id="0"
+              >
+                <fieldset>
+                  <legend class="field_label">
+                    Name <span class="forms_required_label">*</span>
+                  </legend>
+                  <div class="field_row_container">
+                    <div class="field_row">
+                      <div class="field_row_first">
+                        <input
+                          type="text"
+                          id="name_id"
+                          class="field_name_first"
+                          name="first_name"
+                          required
+                        />
+                        <label for="name_id" class="field_sublabel"
+                          >First</label
+                        >
+                      </div>
+                    </div>
+                    <div class="field_row">
+                      <div class="field_row_last">
+                        <input
+                          type="text"
+                          id="lastname_id"
+                          class="field_last_first"
+                          name="last_name"
+                          required
+                        />
+                        <label for="lastname_id" class="field_sublabel"
+                          >Last</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+              <div
+                id="form_email_field_1"
+                class="field_email form_field form_field_container"
+                data-field-type="email"
+                data-field-id="1"
+              >
+                <label class="field_label" for="form_email_field_1"
+                  >Email <span class="forms_required_label">*</span></label
+                >
+                <input
+                  type="email"
+                  name="email_field"
+                  id="form_email_field_1"
+                  required
+                />
+              </div>
+
+              <div
+                id="form_comment_field_10"
+                class="field_comment form_field form_field_container"
+                data-field-type="textarea"
+                data-field-id="10"
+              >
+                <label class="field_label" for="form_comment_field_10"
+                  >Comment or Message</label
+                >
+                <textarea
+                  name="form_comment_field_10"
+                  id="form_comment_field_10"
+                ></textarea>
+              </div>
+              <div class="submitButton" id="formSubmit">
+                <button type="submit" name="formSubmit">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
     </div>
 
     <footer id="footer_back">
@@ -116,6 +207,58 @@
           navbar.classList.remove("scrolled");
         }
       };
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("submitForm");
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          // Collect form data
+          const data = {
+            first_name: form.first_name.value,
+            last_name: form.last_name.value,
+            email: form.email_field.value,
+            comment: form.form_comment_field_10.value,
+          };
+
+          // Validate fields (example: ensure all fields are filled)
+          if (
+            !data.first_name ||
+            !data.last_name ||
+            !data.email ||
+            !data.comment
+          ) {
+            alert("All fields are required.");
+            return;
+          }
+
+          // Submit form data
+          submitForm(data, form);
+        });
+
+        async function submitForm(data, form) {
+          try {
+            const response = await fetch("http://localhost:5000/contact", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+            console.log(response);
+            if (response.ok) {
+              form.reset(); // Clear the form
+              alert("Form submitted successfully!");
+            } else {
+              alert("Failed to submit the form.");
+            }
+          } catch (error) {
+            console.error("Error submitting the form:", error);
+            alert("An error occurred. Please try again.");
+          }
+        }
+      });
     </script>
   </body>
 </html>
