@@ -41,7 +41,7 @@
 
     <div class="main_container">
       <header>
-        <div class="about_hero_section">
+        <div class="join_hero_section">
           <div class="content">
             <div class="container">
               <div class="banner">
@@ -235,6 +235,14 @@
 
         fileInput.addEventListener("change", function (event) {
           const files = Array.from(event.target.files);
+          const maxSizeMB = 10;
+          for (const file of files) {
+            if (file.size / 1024 / 1024 > maxSizeMB) {
+              alert(`File ${file.name} exceeds ${maxSizeMB}MB limit.`);
+              fileInput.value = '';
+              return;
+            }
+          }
           if (files.length + previewContainer.children.length > 5) {
             alert("You can upload a maximum of 5 files.");
             return;
@@ -318,6 +326,7 @@
 
           if (fileInput.files.length === 0) {
             fieldError.style.display = "block";
+            alert('Please upload at least one file.');
             return;
           }
 
@@ -327,7 +336,7 @@
             email: form.email.value,
             position: form.position.value,
             introduction: form.introduction.value,
-            previous_works: form.previous_works.value,
+            previous_works: form.previous_works.value || '',
             files: [],
           };
 
@@ -360,6 +369,7 @@
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(data),
             });
+            const result = await response.json(); // Parse JSON response
             if (response.ok) {
               form.reset();
               fileInput.value = "";
