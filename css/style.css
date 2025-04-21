@@ -1166,56 +1166,111 @@ article {
 /********************** Issue Page *******************/
 
 
-/********************** Issue I **************************/
-.issue_i.issue_hero_section {
-  background-image: url("../assets/Adobe\ Express\ -\ file.jpg");
+/********************** Poetry Collection '22 **************************/
+
+.poetry_collection_22_hero_section.issue_hero_section{
+  background-image: url("../assets/issue_cover_photos/Poetry Collective '22.jpg");
+
 }
 
+/********************** Poetry Collection '23 **************************/
+
+.poetry_collection_23_hero_section.issue_hero_section{
+  background-image: url("../assets/issue_cover_photos/Poetry Collective '23.jpg");
+
+}
+/********************** Poetry Collection '24 **************************/
+
+.poetry_collection_24_hero_section.issue_hero_section{
+  background-image: url("../assets/issue_cover_photos/Poetry Collective '24.jpg");
+
+}
+
+
+/********************** Issue I **************************/
+.issue_i.issue_hero_section {
+  background-image: url("../assets/issue_cover_photos/Issue 1 cover.jpg");
+  color: #ffffff;
+}
+
+
+.issue_i.issue_hero_section {
+  color: rgb(95, 90, 90);
+  text-shadow: 0 5px 5px rgba(38, 36, 36, 0.14);
+  position: relative;
+  z-index: 2;
+} 
+
+.issue_i.issue_hero_section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.05)
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+
 /********************** Issue II **************************/
-.issue_ii_hero_section {
-  background-image: url("../assets/death_in_literature_cover.webp");
+.issue_ii.issue_hero_section {
+  background-image: url("../assets/issue_cover_photos/issue 2 cover.png");
+
+
 }
 
 /********************** Issue III **************************/
-.issue_iii_hero_section {
-  background-image: url("../assets/death_in_literature_cover.webp");
+.issue_iii.issue_hero_section {
+  background-image: url("../assets/issue_cover_photos/Issue 3 cover.png");
 }
 
 /********************** Issue IV **************************/
-.issue_iv_hero_section {
-  background-image: url("../assets/death_in_literature_cover.webp");
+.issue_iv.issue_hero_section {
+  background-image: url("../assets/issue_cover_photos/issue 4 cover.png");
 
 }
 
 /********************** Issue V **************************/
-.issue_v_hero_section {
-  background-image: url("../assets/death_in_literature_cover.webp");
+.issue_v.issue_hero_section {
+  background-image: url("../assets/issue_cover_photos/Issue 5 cover.png");
 }
 
 /********************** Issue VI **************************/
-.issue_vi_hero_section {
-  background-image: url("../assets/death_in_literature_cover.webp");
+.issue_vi.issue_hero_section {
+  background-image: url("../assets/issue_cover_photos/Issue 6 cover.png");
 }
 
 /********************** Issue VII **************************/
-.issue_vii_hero_section {
-  background-image: url("../assets/death_in_literature_cover.webp");
+.issue_vii.issue_hero_section {
+  background-image: url("../assets/issue_cover_photos/Issue 7 cover.png");
 }
 
 /********************** Issue VIII **************************/
-.issue_viii_hero_section {
-  background-image: url("../assets/death_in_literature_cover.webp");
+.issue_viii.issue_hero_section {
+  background-image: url("../assets/issue_cover_photos/Issue 8 cover.png");
 }
 
 /********************** Issue IX **************************/
-.issue_ix_hero_section {
-  background-image: url("../assets/death_in_literature_cover.webp");
+.issue_ix.issue_hero_section {
+  background-image: url("../assets/issue_cover_photos/Issue 9 cover.png");
+}
+
+/********************** Issue X **************************/
+.issue_x.issue_hero_section {
+  background-image: url("../assets/issue_cover_photos/Issue 10 cover.png");
 }
 
 
 /********************** Issue XI **************************/
-.issue_xi_hero_section {
-  background-image: url("../assets/death_in_literature_cover.webp");
+.issue_xi.issue_hero_section {
+  background-image: url("../assets/issue_cover_photos/Issue 11 cover.png");
 }
 
 
